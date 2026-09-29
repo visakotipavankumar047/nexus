@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: .
+    env_file: .env
+    ports: ["8000:8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
+      interval: 15s
+      start_period: 30s
+
+  frontend:
+    build: .
+    command: streamlit run frontend/app.py --server.address 0.0.0.0 --server.port 8501 --server.headless true
+    environment:
+      NEXUS_BACKEND_URL: http://backend:8000
+      NEXUS_AUTO_START_BACKEND: "false"
+    ports: ["8501:8501"]
+    depends_on:
+      backend: { condition: service_healthy }

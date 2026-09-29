@@ -1,0 +1,24 @@
+# Render blueprint: New > Blueprint > pick this repo. Both services build from the same Dockerfile.
+# Secrets (sync: false) are asked for once in the Render dashboard; copy the values from your local .env.
+services:
+  - type: web
+    name: nexus-api
+    runtime: docker
+    healthCheckPath: /api/v1/health
+    envVars:
+      - { key: DATABASE_URL, sync: false }  # the Supabase *session pooler* URL (IPv4), not db.<ref>.supabase.co
+      - { key: PINECONE_API_KEY, sync: false }
+      - { key: PINECONE_INDEX, sync: false }
+      - { key: HUGGINGFACEHUB_ACCESS_TOKEN, sync: false }
+      - { key: OPENAI_API_KEY, sync: false }
+      - { key: LANGSMITH_API_KEY, sync: false }
+      - { key: LANGSMITH_PROJECT, sync: false }
+      - { key: OPENALEX_API_KEY, sync: false }
+
+  - type: web
+    name: nexus-ui
+    runtime: docker
+    dockerCommand: sh -c "streamlit run frontend/app.py --server.address 0.0.0.0 --server.port $PORT --server.headless true"
+    envVars:
+      - { key: NEXUS_BACKEND_URL, sync: false }  # nexus-api's URL, e.g. https://nexus-api.onrender.com
+      - { key: NEXUS_AUTO_START_BACKEND, value: "false" }

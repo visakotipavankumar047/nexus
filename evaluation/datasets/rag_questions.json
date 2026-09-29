@@ -1,0 +1,66 @@
+[
+  {
+    "id": "private-auth",
+    "question": "What is our authentication architecture according to my documents?",
+    "expected_sources": ["nexus_architecture.md"],
+    "expected_tools": ["vector_search"],
+    "use_web": false,
+    "use_private_knowledge": true
+  },
+  {
+    "id": "private-namespaces",
+    "question": "How does NEXUS keep one user's vectors away from another user?",
+    "expected_sources": ["nexus_architecture.md"],
+    "expected_tools": ["vector_search"],
+    "use_web": false,
+    "use_private_knowledge": true
+  },
+  {
+    "id": "private-embeddings",
+    "question": "Which embedding model and chunk size does our system use, and what happens if we change the model?",
+    "expected_sources": ["nexus_architecture.md"],
+    "expected_tools": ["vector_search"],
+    "use_web": false,
+    "use_private_knowledge": true
+  },
+  {
+    "id": "private-loop-limit",
+    "question": "How many tool rounds can the agent run per answer, and why?",
+    "expected_sources": ["nexus_architecture.md"],
+    "expected_tools": ["vector_search"],
+    "use_web": false,
+    "use_private_knowledge": true
+  },
+  {
+    "id": "live-python",
+    "question": "What is the latest stable Python release today?",
+    "expected_sources": [],
+    "expected_tools": ["web_search"],
+    "use_web": true,
+    "use_private_knowledge": false
+  },
+  {
+    "id": "both-compare",
+    "question": "Compare our tool list with the tools the current LangChain documentation recommends for agents.",
+    "expected_sources": ["nexus_architecture.md"],
+    "expected_tools": ["vector_search", "web_search"],
+    "use_web": true,
+    "use_private_knowledge": true
+  },
+  {
+    "id": "calc",
+    "question": "What is 1234 * 5678?",
+    "expected_sources": [],
+    "expected_tools": ["calculator"],
+    "use_web": false,
+    "use_private_knowledge": false
+  },
+  {
+    "id": "none-general",
+    "question": "In one sentence, what does RAG stand for?",
+    "expected_sources": [],
+    "expected_tools": [],
+    "use_web": false,
+    "use_private_knowledge": false
+  }
+]

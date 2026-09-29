@@ -1,0 +1,10 @@
+.env
+.venv
+.git
+.claude
+.agents
+.pytest_cache
+**/__pycache__
+logs
+tests
+evaluation
