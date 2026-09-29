@@ -39,3 +39,141 @@ INFO:     127.0.0.1:54644 - "GET /api/v1/conversations HTTP/1.1" 200 OK
 {"timestamp": "2026-09-29T09:17:28.660626+00:00", "level": "INFO", "request_id": "req_a7b70a8554fa", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.2}
 INFO:     127.0.0.1:54644 - "GET /api/v1/health HTTP/1.1" 200 OK
 {"timestamp": "2026-09-29T09:17:37.952776+00:00", "level": "WARNING", "request_id": "req_6e571ba06b6e", "event": "web_provider_failed", "provider": "news", "exception": "Traceback (most recent call last):\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_transports\\default.py\", line 101, in map_httpcore_exceptions\n    yield\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_transports\\default.py\", line 394, in handle_async_request\n    resp = await self._pool.handle_async_request(req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpcore\\_async\\connection_pool.py\", line 256, in handle_async_request\n    raise exc from None\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpcore\\_async\\connection_pool.py\", line 236, in handle_async_request\n    response = await connection.handle_async_request(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpcore\\_async\\connection.py\", line 101, in handle_async_request\n    raise exc\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpcore\\_async\\connection.py\", line 78, in handle_async_request\n    stream = await self._connect(request)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpcore\\_async\\connection.py\", line 156, in _connect\n    stream = await stream.start_tls(**kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpcore\\_backends\\anyio.py\", line 67, in start_tls\n    with map_exceptions(exc_map):\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\contextlib.py\", line 158, in __exit__\n    self.gen.throw(value)\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpcore\\_exceptions.py\", line 14, in map_exceptions\n    raise to_exc(exc) from exc\nhttpcore.ConnectTimeout\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\app\\tools\\web_search.py\", line 88, in _gdelt\n    resp = await client.get(\"https://api.gdeltproject.org/api/v2/doc/doc\", params={\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_client.py\", line 1768, in get\n    return await self.request(\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_client.py\", line 1540, in request\n    return await self.send(request, auth=auth, follow_redirects=follow_redirects)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_client.py\", line 1629, in send\n    response = await self._send_handling_auth(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_client.py\", line 1657, in _send_handling_auth\n    response = await self._send_handling_redirects(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_client.py\", line 1694, in _send_handling_redirects\n    response = await self._send_single_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_client.py\", line 1730, in _send_single_request\n    response = await transport.handle_async_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_transports\\default.py\", line 393, in handle_async_request\n    with map_httpcore_exceptions():\n         ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\contextlib.py\", line 158, in __exit__\n    self.gen.throw(value)\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\.venv\\Lib\\site-packages\\httpx\\_transports\\default.py\", line 118, in map_httpcore_exceptions\n    raise mapped_exc(message) from exc\nhttpx.ConnectTimeout"}
+{"timestamp": "2026-09-29T09:19:05.643182+00:00", "level": "INFO", "request_id": "req_aea9f318d0e3", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 213.7}
+INFO:     127.0.0.1:54695 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:21:13.100042+00:00", "level": "INFO", "request_id": "req_deb61cc07b46", "event": "request_completed", "method": "GET", "route": "/conversations/{conversation_id}/messages", "status": 200, "latency_ms": 264.6}
+INFO:     127.0.0.1:54716 - "GET /api/v1/conversations/c8187a85-aacc-482b-ab4a-b67fae0a1db9/messages HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:21:13.368730+00:00", "level": "INFO", "request_id": "req_6ce6608b5811", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 257.9}
+INFO:     127.0.0.1:54716 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:21:13.372726+00:00", "level": "INFO", "request_id": "req_e7ed95c22a63", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.1}
+INFO:     127.0.0.1:54716 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:22:25.588982+00:00", "level": "INFO", "request_id": "req_3a1432c07dcd", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 204.5}
+INFO:     127.0.0.1:54759 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:22:25.592981+00:00", "level": "INFO", "request_id": "req_78130f68d4e6", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.1}
+INFO:     127.0.0.1:54759 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:22:25.985649+00:00", "level": "INFO", "request_id": "req_afe43c0dd593", "event": "request_completed", "method": "GET", "route": "/documents", "status": 200, "latency_ms": 380.1}
+INFO:     127.0.0.1:54759 - "GET /api/v1/documents HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:09.094841+00:00", "level": "INFO", "request_id": "req_a3f77814e40e", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 212.7}
+INFO:     127.0.0.1:54786 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:09.099842+00:00", "level": "INFO", "request_id": "req_acd1c15b8f69", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.4}
+INFO:     127.0.0.1:54786 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:09.326919+00:00", "level": "INFO", "request_id": "req_ea86c7cba2e6", "event": "request_completed", "method": "GET", "route": "/documents", "status": 200, "latency_ms": 211.9}
+INFO:     127.0.0.1:54786 - "GET /api/v1/documents HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:29.491489+00:00", "level": "INFO", "request_id": "req_e994eb33eed4", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 205.4}
+INFO:     127.0.0.1:54789 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:29.499484+00:00", "level": "INFO", "request_id": "req_f4107f6a9aef", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.5}
+INFO:     127.0.0.1:54789 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:29.725077+00:00", "level": "INFO", "request_id": "req_35f0520342e2", "event": "request_completed", "method": "GET", "route": "/documents", "status": 200, "latency_ms": 211.1}
+INFO:     127.0.0.1:54789 - "GET /api/v1/documents HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:41.323899+00:00", "level": "INFO", "request_id": "req_5f97f704fdf0", "event": "request_completed", "method": "POST", "route": "/search/vector", "status": 200, "latency_ms": 11589.4}
+INFO:     127.0.0.1:54789 - "POST /api/v1/search/vector HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:45.979779+00:00", "level": "INFO", "request_id": "req_fca30dd00f56", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 208.8}
+INFO:     127.0.0.1:54789 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:45.985781+00:00", "level": "INFO", "request_id": "req_4123ad8ec775", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.5}
+INFO:     127.0.0.1:54789 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:25:59.758718+00:00", "level": "INFO", "request_id": "req_f0d088d0abf0", "event": "document_indexed", "document_id": "818b4a85-daf2-42b2-9d65-ea28e5a0ec71", "chunks": 19}
+{"timestamp": "2026-09-29T09:25:59.759723+00:00", "level": "INFO", "request_id": "req_f0d088d0abf0", "event": "request_completed", "method": "POST", "route": "/documents/upload", "status": 201, "latency_ms": 13762.1}
+INFO:     127.0.0.1:54789 - "POST /api/v1/documents/upload HTTP/1.1" 201 Created
+{"timestamp": "2026-09-29T09:26:00.036911+00:00", "level": "INFO", "request_id": "req_4c0b67d0962a", "event": "request_completed", "method": "GET", "route": "/documents", "status": 200, "latency_ms": 268.3}
+INFO:     127.0.0.1:54789 - "GET /api/v1/documents HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:06.087174+00:00", "level": "INFO", "request_id": "req_eb222e894979", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 208.0}
+INFO:     127.0.0.1:54796 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:06.095179+00:00", "level": "INFO", "request_id": "req_a52b4023c7a7", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 2.9}
+INFO:     127.0.0.1:54796 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:06.321991+00:00", "level": "INFO", "request_id": "req_b788a8df88c9", "event": "request_completed", "method": "GET", "route": "/documents", "status": 200, "latency_ms": 211.8}
+INFO:     127.0.0.1:54796 - "GET /api/v1/documents HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:10.812839+00:00", "level": "INFO", "request_id": "req_e9f06c73e9f3", "event": "request_completed", "method": "POST", "route": "/search/vector", "status": 200, "latency_ms": 4474.5}
+INFO:     127.0.0.1:54796 - "POST /api/v1/search/vector HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:21.728387+00:00", "level": "INFO", "request_id": "req_a8d8f567ff22", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 207.7}
+INFO:     127.0.0.1:54801 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:21.734389+00:00", "level": "INFO", "request_id": "req_6ad4259a192e", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.7}
+INFO:     127.0.0.1:54801 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:22.012014+00:00", "level": "INFO", "request_id": "req_20f5ac92ddf3", "event": "request_completed", "method": "GET", "route": "/documents", "status": 200, "latency_ms": 263.8}
+INFO:     127.0.0.1:54801 - "GET /api/v1/documents HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:24.460050+00:00", "level": "INFO", "request_id": "req_a5388d3cb0f4", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 234.1}
+INFO:     127.0.0.1:54801 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:24.467048+00:00", "level": "INFO", "request_id": "req_c50281d1bc15", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.6}
+INFO:     127.0.0.1:54801 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:24.689226+00:00", "level": "INFO", "request_id": "req_e741bce5b497", "event": "request_completed", "method": "GET", "route": "/documents", "status": 200, "latency_ms": 206.9}
+INFO:     127.0.0.1:54801 - "GET /api/v1/documents HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:30.887446+00:00", "level": "INFO", "request_id": "req_7ab0a848a049", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 224.3}
+INFO:     127.0.0.1:54802 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:30.893445+00:00", "level": "INFO", "request_id": "req_863750b74019", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.9}
+INFO:     127.0.0.1:54802 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:31.148933+00:00", "level": "INFO", "request_id": "req_ea24ed9b0b03", "event": "request_completed", "method": "GET", "route": "/evaluations", "status": 200, "latency_ms": 249.0}
+INFO:     127.0.0.1:54802 - "GET /api/v1/evaluations?limit=100 HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:33.413862+00:00", "level": "INFO", "request_id": "req_e41a16a4d252", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 210.4}
+INFO:     127.0.0.1:54802 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:33.420851+00:00", "level": "INFO", "request_id": "req_dd556a04cf45", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.6}
+INFO:     127.0.0.1:54802 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:33.631506+00:00", "level": "INFO", "request_id": "req_bbb656d7478b", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 204.8}
+INFO:     127.0.0.1:54802 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:36.421483+00:00", "level": "INFO", "request_id": "req_232635b40030", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 211.5}
+INFO:     127.0.0.1:54802 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:36.428485+00:00", "level": "INFO", "request_id": "req_8861eb51f939", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.9}
+INFO:     127.0.0.1:54802 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T09:26:36.647857+00:00", "level": "INFO", "request_id": "req_187aa9fbde34", "event": "request_completed", "method": "GET", "route": "/documents", "status": 200, "latency_ms": 206.9}
+INFO:     127.0.0.1:54802 - "GET /api/v1/documents HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:24:20.108740+00:00", "level": "INFO", "request_id": "req_17629c50e9ae", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 505.6}
+INFO:     127.0.0.1:54982 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:24:20.116742+00:00", "level": "INFO", "request_id": "req_949a44ba70a0", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 2.4}
+INFO:     127.0.0.1:54982 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:24:25.817749+00:00", "level": "INFO", "request_id": "req_6074ffd07bee", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 212.8}
+INFO:     127.0.0.1:54984 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:24:25.821751+00:00", "level": "INFO", "request_id": "req_79a35d437c52", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.0}
+INFO:     127.0.0.1:54984 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:24:25.882775+00:00", "level": "INFO", "request_id": "req_98d2a4a40037", "event": "request_completed", "method": "POST", "route": "/chat/stream", "status": 200, "latency_ms": 2.8}
+INFO:     127.0.0.1:54984 - "POST /api/v1/chat/stream HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:24:38.314867+00:00", "level": "INFO", "request_id": "req_b77760af8586", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 19728.5}
+INFO:     127.0.0.1:54978 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:24:44.478026+00:00", "level": "WARNING", "request_id": "req_98d2a4a40037", "event": "rerank_failed_fallback_to_vector_order", "exception": "Traceback (most recent call last):\n  File \"C:\\Users\\Dell\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\asyncio\\tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"C:\\Users\\Dell\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\asyncio\\threads.py\", line 25, in to_thread\n    return await loop.run_in_executor(None, func_call)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nasyncio.exceptions.CancelledError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\app\\rag\\retriever.py\", line 37, in pinecone_call\n    return await asyncio.wait_for(asyncio.to_thread(fn, *args, **kwargs), get_settings().pinecone_timeout_s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\asyncio\\tasks.py\", line 519, in wait_for\n    async with timeouts.timeout(timeout):\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\asyncio\\timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\app\\rag\\reranker.py\", line 20, in rerank\n    res = await pinecone_call(get_pinecone().inference.rerank, model=s.rerank_model, query=query,\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\Documents\\Programming\\NEXUS\\app\\rag\\retriever.py\", line 39, in pinecone_call\n    raise VectorDatabaseException() from e\napp.utils.errors.VectorDatabaseException: Vector database request failed"}
+{"timestamp": "2026-09-29T10:25:12.534043+00:00", "level": "INFO", "request_id": "req_11d08ef51b18", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 203.3}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:12.539042+00:00", "level": "INFO", "request_id": "req_9da83e5cf9e2", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.2}
+INFO:     127.0.0.1:54998 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:14.750406+00:00", "level": "INFO", "request_id": "req_05f6d918e972", "event": "request_completed", "method": "GET", "route": "/conversations/{conversation_id}/messages", "status": 200, "latency_ms": 269.8}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations/ba621685-babc-4cd6-9764-8055b886b5fa/messages HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:14.974386+00:00", "level": "INFO", "request_id": "req_9989ab4a23b2", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 213.8}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:14.980383+00:00", "level": "INFO", "request_id": "req_367ed9c826b3", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.2}
+INFO:     127.0.0.1:54998 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:17.722902+00:00", "level": "INFO", "request_id": "req_2852db188e14", "event": "request_completed", "method": "GET", "route": "/conversations/{conversation_id}/messages", "status": 200, "latency_ms": 515.6}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations/c8187a85-aacc-482b-ab4a-b67fae0a1db9/messages HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:18.503321+00:00", "level": "INFO", "request_id": "req_e87942d507da", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 770.8}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:18.510667+00:00", "level": "INFO", "request_id": "req_16fc76d936f1", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.4}
+INFO:     127.0.0.1:54998 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:19.360275+00:00", "level": "INFO", "request_id": "req_d3b8e1d21885", "event": "request_completed", "method": "GET", "route": "/conversations/{conversation_id}/messages", "status": 200, "latency_ms": 254.3}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations/c8187a85-aacc-482b-ab4a-b67fae0a1db9/messages HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:19.577718+00:00", "level": "INFO", "request_id": "req_9ca5c8f502e6", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 208.8}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:19.582718+00:00", "level": "INFO", "request_id": "req_fb9d4ec9190d", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.1}
+INFO:     127.0.0.1:54998 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:25.392147+00:00", "level": "INFO", "request_id": "req_a3752551b3eb", "event": "request_completed", "method": "GET", "route": "/conversations/{conversation_id}/messages", "status": 200, "latency_ms": 1065.1}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations/ba621685-babc-4cd6-9764-8055b886b5fa/messages HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:25.653076+00:00", "level": "INFO", "request_id": "req_f22a129e96b2", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 253.8}
+INFO:     127.0.0.1:54998 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:25:25.660097+00:00", "level": "INFO", "request_id": "req_519f7f6c2802", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 1.2}
+INFO:     127.0.0.1:54998 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:48:43.508072+00:00", "level": "INFO", "request_id": "req_ca61d44e1773", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 263.8}
+INFO:     127.0.0.1:55648 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:48:43.520072+00:00", "level": "INFO", "request_id": "req_f7efdf63c94a", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 2.5}
+INFO:     127.0.0.1:55648 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [14008]
+INFO:     Started server process [15192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+{"timestamp": "2026-09-29T10:52:31.417796+00:00", "level": "INFO", "request_id": "req_b69589eb0c77", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 287.8}
+INFO:     127.0.0.1:56090 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:52:33.388800+00:00", "level": "INFO", "request_id": "req_fc56a7448dca", "event": "request_completed", "method": "GET", "route": "/conversations", "status": 200, "latency_ms": 1896.4}
+INFO:     127.0.0.1:56094 - "GET /api/v1/conversations HTTP/1.1" 200 OK
+{"timestamp": "2026-09-29T10:52:33.401805+00:00", "level": "INFO", "request_id": "req_13eac213e6c3", "event": "request_completed", "method": "GET", "route": "/health", "status": 200, "latency_ms": 2.7}
+INFO:     127.0.0.1:56094 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [15192]
